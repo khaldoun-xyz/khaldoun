@@ -10,7 +10,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+import os
+from distutils.util import strtobool
 from pathlib import Path
+
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +26,12 @@ TEMPLATE_DIR = BASE_DIR / "templates"
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-1l*!75z^fnz6#=esp@$9h2&4=!u^^i4#r#b#lng#=4(r0=%j1*'
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = strtobool(os.getenv("DJANGO_DEBUG", "False"))
 
-ALLOWED_HOSTS = ["127.0.0.1", "0.0.0.0", "khaldoun.xyz"]
+ALLOWED_HOSTS = ["127.0.0.1", "0.0.0.0", "khaldoun.xyz", "whale-app-fiwro.ondigitalocean.app"]
 CSRF_TRUSTED_ORIGINS = ["https://khaldoun.xyz", "http://khaldoun.xyz"]
 
 # Application definition
