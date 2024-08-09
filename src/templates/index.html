@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khaldoun</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="section1" class="section" style="background-color: white; color: black;">
+        <div>
+            <h1 class="text-8xl md:text-12xl font-bold">Khaldoun</h1>
+            <p>A Tunisian data science boutique.</p>
+            <h3 class="text-2xl md:text-3xl mt-4">Become more productive.</h3>
+        </div>
+    </div>
+    <div id="section2" class="section" style="background-color: black; color: white;">
+        <div>
+            <h1 class="text-6xl md:text-10xl font-bold">Dream-come-true deal for members</h1>
+            <ul class="list-group text-lg md:text-xl mt-6">
+                <li class="list-group-item" style="background-color: black;">- I improve my income opportunities because I continuously become more productive.</li>
+                <li class="list-group-item" style="background-color: black;">- I create a plan for my life and Khaldoun helps me actualise it.</li>
+            </ul>
+        </div>
+    </div>
+    <div id="section3" class="section" style="background-color: white; color: black;">
+        <div>
+            <h1 class="text-6xl md:text-10xl font-bold">Candidates train themselves through ...</h1>
+            <ul class="list-group text-lg md:text-xl mt-6">
+                <li class="list-group-item" style="background-color: white;">- intense language learning aided by AI voicebots,</li>
+                <li class="list-group-item" style="background-color: white;">- actual work assignments from potential employers,</li>
+                <li class="list-group-item" style="background-color: white;">- seminars on increasing productivity (e.g. non-linear behaviour).</li>
+            </ul>        
+        </div>
+    </div>
+    <div id="section4" class="section" style="background-color: black; color: white;">
+        <div>
+            <h1 class="text-6xl md:text-10xl font-bold">Why?</h1>
+            <p class="text-lg md:text-xl mt-6">Machine Learning has a veil of excellence that is largely unwarranted. <br>
+                While cutting-edge competence is valuable, 
+                most companies cannot integrate candidates with such skillsets.</p> 
+            <p class="text-lg md:text-xl mt-6">What everyone needs is co-workers that get things done.</p>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
