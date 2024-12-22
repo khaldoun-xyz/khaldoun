@@ -1,114 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khaldoun</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        .section {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-    <div id="section1" class="section" style="background-color: white; color: black;">
-        <div>
-            <h1 class="text-8xl md:text-12xl font-bold">Khaldoun</h1>
-            <p>A Tunisian data science boutique.</p>
-            <h3 class="text-2xl md:text-3xl mt-4">Become more effective.</h3>
+{% extends "base.html" %}
+{% load static %}
+{% block body_block %}
+    <div class="container pt-5 mt-5">
+        <div class="flex flex-col space-y-4 text-center mt-4">
+            <h2 class="mx-auto my-2 max-w-md text-2xl font-medium tracking-tight md:text-3xl">Khaldoun</h2>
+            <p>A Tunisian data science boutique</p>
         </div>
-    </div>
-    <div id="section2" class="section" style="background-color: black; color: white;">
-        <div>
-            <h1 class="text-6xl md:text-10xl font-bold">Individuals move the world.</h1>
-            <p class="text-lg md:text-xl mt-6">
-                We fervently believe that one individual can have a bigger impact than 1000 co-workers. 
-                <br>
-                If that individual is you, you can find a well-paying job anywhere. 
+        <div class="flex flex-col space-y-4 text-center mt-4">
+            <p style="max-width: 600px; margin: auto; text-align: center;">
+                Khaldoun members are paid independent freelancers. 
+                Members develop open-source products 
+                until they find a job with a European or Tunisian organisation.
+            </p>
+        </div>
+        <div class="flex flex-col space-y-4 text-center mt-4">
+            <p style="max-width: 600px; margin: auto; text-align: center;">
+                We are based in Tunis, Tunisia. 
+                If you want to join, send an email to <b>alex.gansmann@hey.com</b>.
             </p>
         </div>
     </div>
-    <div id="section3" class="section" style="background-color: white; color: black;">
-        <div>
-            <h1 class="text-6xl md:text-10xl font-bold">We want to help you ...</h1>
-            <ul class="list-group text-lg md:text-xl mt-6">
-                <li class="list-group-item" style="background-color: white;">- quickly build non-linear skills,</li>
-                <li class="list-group-item" style="background-color: white;">- intensely learn a new language,</li>
-                <li class="list-group-item" style="background-color: white;">- connect with European data scientists,</li> 
-                <li class="list-group-item" style="background-color: white;">- find a well-paying job.</li> 
-            </ul>        
-        </div>
-    </div>
-    <div id="section4" class="section" style="background-color: black; color: white;">
-        <div>
-            <h1 class="text-6xl md:text-10xl font-bold">Build non-linear skills</h1>
-            <p class="text-lg md:text-xl mt-6">
-                There are core skills that are critically relevant for a data scientist or data engineer. <br>
-                Two <i>very basic</i> examples are the use of git as a source control tool 
-                or SQL as a database query language. <br>
-                Learn these this weekend and benefit 
-                from them for the rest of your life.
-            </p> 
-            <p class="text-lg md:text-xl mt-6">
-                Commit to a) doing the basics right and b) getting things done. 
-                The rest will come in time. <br> 
-            </p> 
-        </div>
-    </div>
-    <div id="section5" class="section" style="background-color: white; color: black;">
-        <div>
-            <h1 class="text-6xl md:text-10xl font-bold">Intensely learn a language</h1>
-            <p class="text-lg md:text-xl mt-6">
-                Becoming fluent in a new language in 3-6 months teaches you 
-                that you can do things that others cannot imagine. <br>
-                Also, it is a necessary requirement for a contract with a company outside Tunisia.
-            </p> 
-            <p class="text-lg md:text-xl mt-6">
-                The keys are total immersion and focus. <br>
-            </p>
-        </div>
-    </div>
-    <div id="section6" class="section" style="background-color: black; color: white;">
-        <div>
-            <h1 class="text-6xl md:text-10xl font-bold">Connect with data scientists</h1>
-            <p class="text-lg md:text-xl mt-6">
-                To achieve something extraordinary, 
-                it is important to surround yourself with extraordinary people.
-                <br>
-                Typical environments are full of naysayers. Change yours.
-            </p>
-            <p class="text-lg md:text-xl mt-6">
-                Interact with people who have already achieved what you're striving for.
-            </p> 
-        </div>
-    </div>
-    <div id="section7" class="section" style="background-color: white; color: black;">
-        <div>
-            <h1 class="text-6xl md:text-10xl font-bold">Want to join?</h1>
-            <p class="text-lg md:text-xl mt-6">
-                We are a small data science boutique in Tunis, Tunisia. 
-                <br>
-                If you live in Tunisia, send an email to <b>alex.gansmann@hey.com</b>.
-            </p> 
-        </div>
-    </div>
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+{% endblock body_block %}
