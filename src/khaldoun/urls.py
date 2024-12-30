@@ -7,6 +7,7 @@ from khaldoun import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", views.index, name="index"),
+    path("growth", views.growth, name="growth"),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
