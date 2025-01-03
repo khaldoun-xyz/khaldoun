@@ -25,6 +25,17 @@
               href="{% static 'favicon-khaldoun.png' %}">
     </head>
     <body>
+        <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'index' %}">
+                    <img src="{% static 'logo-khaldoun.png' %}"
+                         width="30"
+                         height="30"
+                         class="d-inline-block align-top"
+                         alt="">
+                </a>
+            </div>
+        </nav>
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
                 {% block body_block %}
