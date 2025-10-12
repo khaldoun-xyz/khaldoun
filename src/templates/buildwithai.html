@@ -1,0 +1,237 @@
+{% extends 'base.html' %} {% load static %} {% block body_block %}
+<!-- Custom CSS -->
+<style>
+  .section {
+    padding: 80px 0;
+  }
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+  }
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .agenda-item {
+    border-left: 3px solid #007bff;
+    margin-bottom: 20px;
+    padding-left: 20px;
+  }
+</style>
+
+<!-- Video Section -->
+<section class="section">
+  <div class="container text-center">
+    <h1 class="display-4 mb-4">Build with AI in Tunis</h1>
+    <div class="video-container mb-4">
+      <!-- Placeholder video - Replace src with actual video -->
+      <iframe
+        src="https://www.youtube.com/embed/placeholder"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      >
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Registration Section -->
+<section class="section bg-light" id="registration">
+  <div class="container">
+    <h2 class="text-center mb-5">Registration</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <!-- Password Protection -->
+        <div id="password-protection" class="text-center">
+          <p class="mb-3">Please enter the password to access registration:</p>
+          <div class="input-group mb-3">
+            <input
+              type="password"
+              id="registration-password"
+              class="form-control"
+              placeholder="Enter password"
+            />
+            <button
+              class="btn btn-dark"
+              type="button"
+              onclick="checkPassword()"
+            >
+              Submit
+            </button>
+          </div>
+          <div id="password-error" class="text-danger" style="display: none">
+            Incorrect password. Please try again.
+          </div>
+        </div>
+
+        <!-- Registration Form (Hidden by default) -->
+        <form id="registration-form" style="display: none">
+          <div class="mb-3">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Full Name"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Email Address"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-dark w-100">
+            Submit Registration
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Agenda Section -->
+<section class="section" id="agenda">
+  <div class="container">
+    <h2 class="text-center mb-5">Event Agenda</h2>
+    <div class="agenda-item">
+      <h4>9:00 AM - Opening Keynote</h4>
+      <p>Welcome address and introduction to the future of AI development</p>
+    </div>
+    <div class="agenda-item">
+      <h4>10:30 AM - Technical Sessions</h4>
+      <p>Deep dive into AI frameworks and tools</p>
+    </div>
+    <div class="agenda-item">
+      <h4>12:00 PM - Networking Lunch</h4>
+      <p>Connect with fellow developers and AI enthusiasts</p>
+    </div>
+    <div class="agenda-item">
+      <h4>2:00 PM - Workshops</h4>
+      <p>Hands-on sessions with industry experts</p>
+    </div>
+    <div class="agenda-item">
+      <h4>4:30 PM - Closing Remarks</h4>
+      <p>Summary and future directions</p>
+    </div>
+  </div>
+</section>
+
+<!-- Address Section -->
+<section class="section bg-light" id="venue">
+  <div class="container">
+    <h2 class="text-center mb-5">Venue</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-8 text-center">
+        <h4>Tech Conference Center</h4>
+        <p>123 Innovation Street<br />Silicon Valley, CA 94025</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="section" id="faq">
+  <div class="container">
+    <h2 class="text-center mb-5">Frequently Asked Questions</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq1"
+              >
+                What's included in the registration?
+              </button>
+            </h2>
+            <div
+              id="faq1"
+              class="accordion-collapse collapse"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                Registration includes full access to all sessions, workshops,
+                lunch, and networking events.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq2"
+              >
+                Is there a virtual attendance option?
+              </button>
+            </h2>
+            <div
+              id="faq2"
+              class="accordion-collapse collapse"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                Yes, we offer virtual tickets with access to live streams of all
+                sessions.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="section bg-light" id="contact">
+  <div class="container">
+    <h2 class="text-center mb-5">Contact Us</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-8 text-center">
+        <p>Have questions? We're here to help!</p>
+        <p>Email: info@buildwithai.com<br />Phone: (555) 123-4567</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Add JavaScript for password protection -->
+<script>
+  function checkPassword() {
+    const password = document.getElementById("registration-password").value;
+    const correctPassword = "letsgo";
+
+    if (password === correctPassword) {
+      document.getElementById("password-protection").style.display = "none";
+      document.getElementById("registration-form").style.display = "block";
+      document.getElementById("password-error").style.display = "none";
+    } else {
+      document.getElementById("password-error").style.display = "block";
+      document.getElementById("registration-password").value = "";
+    }
+  }
+
+  // Also allow Enter key to submit password
+  document
+    .getElementById("registration-password")
+    .addEventListener("keypress", function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        checkPassword();
+      }
+    });
+</script>
+{% endblock body_block %}
