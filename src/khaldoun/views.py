@@ -5,5 +5,5 @@ def index(request):
     return render(request, "index.html")
 
 
-def buildwithai(request):
-    return render(request, "buildwithai.html")
+def imprint(request):
+    return render(request, "imprint.html")
