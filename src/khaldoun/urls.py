@@ -8,6 +8,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.index, name="index"),
     path("imprint/", views.imprint, name="imprint"),
+    path("gild/", views.gild, name="gild"),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
