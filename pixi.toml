@@ -1,0 +1,21 @@
+[workspace]
+authors = ["Alex Gansmann <alex.gansmann@hey.com>"]
+channels = ["conda-forge"]
+name = "khaldoun"
+platforms = ["linux-64", "osx-64"]
+version = "0.1.0"
+
+[tasks]
+runserver = "cd src && python manage.py runserver --settings=khaldoun.settings"
+migrate = "cd src && python manage.py migrate --settings=khaldoun.settings"
+makemigrations = "cd src && python manage.py makemigrations --settings=khaldoun.settings"
+collectstatic = "cd src && python manage.py collectstatic --noinput --settings=khaldoun.settings"
+test = "cd src && python manage.py test --settings=khaldoun.settings"
+
+[dependencies]
+python = "3.11.*"
+
+[pypi-dependencies]
+django = ">=4.2"
+gunicorn = "*"
+python-dotenv = "*"

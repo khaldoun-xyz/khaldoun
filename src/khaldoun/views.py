@@ -7,3 +7,7 @@ def index(request):
 
 def imprint(request):
     return render(request, "imprint.html")
+
+
+def gild(request):
+    return render(request, "gild.html")
