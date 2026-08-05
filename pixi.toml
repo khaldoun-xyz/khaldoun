@@ -1,5 +1,5 @@
 [workspace]
-authors = ["Alex Gansmann <alex.gansmann@hey.com>"]
+authors = ["Alex Gansmann <alex@khaldoun.xyz>"]
 channels = ["conda-forge"]
 name = "khaldoun"
 platforms = ["linux-64", "osx-64"]
